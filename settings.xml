@@ -3,13 +3,13 @@
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <servers>
     <server>
-      <username>anujnarayan23@gmail.com</username>
-      <password>AP8h74vn98xu6nYKoSRyp2XR7m9</password>
+      <username>anujnarayan11@gmail.com</username>
+      <password>AP54GscXU2VVqvyuF5pnbmoap7j</password>
       <id>central</id>
     </server>
     <server>
-      <username>anujnarayan23@gmail.com</username>
-      <password>AP8h74vn98xu6nYKoSRyp2XR7m9</password>
+      <username>anujnarayan11@gmail.com</username>
+      <password>AP54GscXU2VVqvyuF5pnbmoap7j</password>
       <id>snapshots</id>
     </server>
   </servers>
@@ -21,14 +21,14 @@
             <enabled>false</enabled>
           </snapshots>
           <id>central</id>
-          <name>devops-libs-release</name>
-          <url>https://trainingdevopscicd.jfrog.io/artifactory/devops-libs-release</url>
+          <name>default-maven-virtual</name>
+          <url>https://devopscicd.jfrog.io/artifactory/default-maven-virtual</url>
         </repository>
         <repository>
           <snapshots />
           <id>snapshots</id>
-          <name>devops-libs-snapshot</name>
-          <url>https://trainingdevopscicd.jfrog.io/artifactory/devops-libs-snapshot</url>
+          <name>default-maven-virtual</name>
+          <url>https://devopscicd.jfrog.io/artifactory/default-maven-virtual</url>
         </repository>
       </repositories>
       <pluginRepositories>
@@ -37,14 +37,14 @@
             <enabled>false</enabled>
           </snapshots>
           <id>central</id>
-          <name>devops-libs-release</name>
-          <url>https://trainingdevopscicd.jfrog.io/artifactory/devops-libs-release</url>
+          <name>default-maven-virtual</name>
+          <url>https://devopscicd.jfrog.io/artifactory/default-maven-virtual</url>
         </pluginRepository>
         <pluginRepository>
           <snapshots />
           <id>snapshots</id>
-          <name>devops-libs-snapshot</name>
-          <url>https://trainingdevopscicd.jfrog.io/artifactory/devops-libs-snapshot</url>
+          <name>default-maven-virtual</name>
+          <url>https://devopscicd.jfrog.io/artifactory/default-maven-virtual</url>
         </pluginRepository>
       </pluginRepositories>
       <id>artifactory</id>

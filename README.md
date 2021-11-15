@@ -1,14 +1,20 @@
-# Spring REST Hello World Example
+# simple-java-maven-app
 
-## 1. How to start
-```
-$ git clone https://github.com/anujnarayan23/springboot.git
-$ mvn clean install
-$ mvn spring-boot:run
-````
-## 2. How to check the output 
-```
-on command prompt $ curl -v localhost:8080/books
-on browser http://localhost:8080/books
-```
- 
+This repository is for the
+[Build a Java app with Maven](https://github.com/anujnarayan23/simple-java-maven-app-master)
+tutorial in the [Jenkins User Documentation](https://jenkins.io/doc/).
+
+The repository contains a simple Java application which outputs the string
+"Hello world!" and is accompanied by a couple of unit tests to check that the
+main application works as expected. The results of these tests are saved to a
+JUnit XML report.
+
+This repo has Jenkins file which contains multiple stages.
+1. Clone repo
+2. Compile with pushing artifacts to Artifactory
+3. Junit test cases
+4. Sonar
+5. Docker build
+6. Docker push - publish the image to artifact
+
+Test
