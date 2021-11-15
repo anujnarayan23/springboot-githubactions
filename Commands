@@ -4,7 +4,7 @@ docker run -d --name sonarqube -p 9000:9000 sonarqube:7.5-community
  
 Other way of instaaling sonarqube
 
-vi /etc/sysctl.conf 
+vi /etc/sysctl.conf
 
 vm.max_map_count=262144
 fs.file-max=65536
