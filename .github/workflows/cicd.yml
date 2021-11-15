@@ -6,6 +6,7 @@ on:
     
 env:
   DATREE_TOKEN: ${{ secrets.DATREE_TOKEN }} 
+  GITHUB_TOKEN: ${{ secrets.G_TOKEN }}
 
 jobs:
   build:
