@@ -46,10 +46,12 @@ spec:
         - name: registry-secret
       containers:
         - name: myapp
-          image: nginx
-          command: ["/bin/sh"]
-          args: ["-c","sh /usr/local/tomcat/bin/startup.sh;while true; do echo hello; sleep 10;done"]
+          image: trainingdevopscicd.jfrog.io/default-docker-local/devops:github-id
+   #       command: ["/bin/sh"]
+    #      args: ["-c","sh /usr/local/tomcat/bin/startup.sh;while true; do echo hello; sleep 10;done"]
           imagePullPolicy: IfNotPresent
+        imagePullSecrets:
+          - name: devops 
           ports:
             - name: http
               containerPort: 8080
