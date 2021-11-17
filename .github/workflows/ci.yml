@@ -74,5 +74,5 @@ jobs:
         name: anuj23/githubactions
         username: ${{ secrets.DOCKER_USERNAME }}
         password: ${{ secrets.DOCKER_PASSWORD }}
-    - name: Publish docker image
-      run: docker push anuj23/githubactions springapp:${{ github.run_number }}
+   # - name: Publish docker image
+   #   run: docker push anuj23/githubactions springapp:${{ github.run_number }}
