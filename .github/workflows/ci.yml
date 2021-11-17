@@ -42,3 +42,18 @@ jobs:
         
     - name: Run Datree's policy check
       run: datree test kube.yaml
+      
+    - name: Create a temp directory
+      run: mkdir downloads
+      
+    - name: Add artifacts to publish to the temp folder
+      run: |
+         cd /home/runner/work/springboot-githubactions/springboot-githubactions/target
+         cp /home/runner/work/springboot-githubactions/springboot-githubactions/target/spring-boot-hello-world-1.0.0-SNAPSHOT.jar /downloads
+         cd /
+         
+    - name: Uplad Github Artifact
+      uses: actions/upload-artifacts@v2
+      with:
+        name: new-artifact
+        path: downloads
