@@ -60,3 +60,8 @@ jobs:
       with:
         name: new-artifact
         path: downloads
+    
+    - name: Generate docker image
+      uses: actions/checkout@v2
+    - name: Build the Docker image
+      run: docker build . --file Dockerfile --tag springapp:$(GITHUB_RUN_ID)
