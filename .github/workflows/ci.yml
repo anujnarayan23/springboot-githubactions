@@ -51,6 +51,7 @@ jobs:
     - name: Add artifacts to publish to the temp folder
       run: |
          cd downloads
+         pwd
          cp /home/runner/work/springboot-githubactions/springboot-githubactions/target/spring-boot-hello-world-1.0.0-SNAPSHOT.jar /downloads/mapp.jar
          cd ..
          
