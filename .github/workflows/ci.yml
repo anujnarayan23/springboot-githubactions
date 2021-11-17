@@ -70,7 +70,7 @@ jobs:
       
     - name: Publish to Registry
       uses: elgohr/Publish-Docker-Github-Action@master
-#      with:
-#        name: anuj23/githubactions
+      with:
+        name: anuj23/githubactions
     - name: Publish docker image
       run: docker push anuj23/githubactions springapp:${{ github.run_number }}
