@@ -11,9 +11,6 @@ FROM openjdk:8-jdk-alpine
 
 COPY . /project
 WORKDIR /project
-RUN chmod +x mvn \
- && mvn --version \
- && mvn clean package \
- && cp ./target/spring-boot-hello-world-1.0.0-SNAPSHO.jar app.jar
+RUN  mvn clean package && cp ./project/target/spring-boot-hello-world-1.0.0-SNAPSHO.jar app.jar
 
 ENTRYPOINT ["java","-jar","app.jar"]
