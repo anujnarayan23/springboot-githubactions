@@ -3,6 +3,8 @@ name: Java CI with Maven
 on:
   pull_request:
     branches: [ main ]
+  push:
+    branches: [ main ]
     
 env:
   DATREE_TOKEN: ${{ secrets.DATREE_TOKEN }} 
@@ -49,7 +51,7 @@ jobs:
     - name: Add artifacts to publish to the temp folder
       run: |
          cd /home/runner/work/springboot-githubactions/springboot-githubactions/target
-         cp /home/runner/work/springboot-githubactions/springboot-githubactions/target/spring-boot-hello-world-1.0.0-SNAPSHOT.jar /downloads
+         cp spring-boot-hello-world-1.0.0-SNAPSHOT.jar /downloads/mapp.jar
          cd /
          
     - name: Uplad Github Artifact
