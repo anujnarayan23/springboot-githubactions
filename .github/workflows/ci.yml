@@ -53,7 +53,7 @@ jobs:
          cd /
          
     - name: Uplad Github Artifact
-      uses: actions/upload-artifacts@v2
+      uses: actions/upload-artifact@v2.2.4
       with:
         name: new-artifact
         path: downloads
