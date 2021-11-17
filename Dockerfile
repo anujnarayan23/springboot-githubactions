@@ -1,4 +1,5 @@
-FROM openjdk:8-jdk-alpine
+FROM maven:3.3-jdk-8
+#openjdk:8-jdk-alpine
 #VOLUME /tmp
 
 #ARG JAR_FILE
