@@ -52,7 +52,7 @@ jobs:
       run: |
          cd downloads
          pwd
-         cp /home/runner/work/springboot-githubactions/springboot-githubactions/target/spring-boot-hello-world-1.0.0-SNAPSHOT.jar /downloads/mapp.jar
+         cp /home/runner/work/springboot-githubactions/springboot-githubactions/target/spring-boot-hello-world-1.0.0-SNAPSHOT.jar /home/runner/work/springboot-githubactions/springboot-githubactions/downloads/mapp.jar
          cd ..
          
     - name: Uplad Github Artifact
