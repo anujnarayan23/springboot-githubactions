@@ -17,9 +17,9 @@ spec:
   spec:
    containers:
    - name: myapp
-     image: anuj23/githubactions:tagversion
+     image: anuj23/githubactions:latest
      ports:
-     - containerPort: 1213
+     - containerPort: 8082
    imagePullSecrets:
      - name: github  
 
@@ -35,4 +35,4 @@ spec:
   ports:
     - protocol: TCP
       port: 80
-      targetPort: 1213
+      targetPort: 8082
