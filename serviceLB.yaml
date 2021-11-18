@@ -17,11 +17,11 @@ spec:
   spec:
    containers:
    - name: myapp
-     image: trainingdevopscicd.jfrog.io/default-docker-local/devops:64
+     image: anuj23/githubactions:${{ github.run_number }}
      ports:
      - containerPort: 1213
    imagePullSecrets:
-     - name: devops  
+     - name: github  
 
 ---
 apiVersion: v1
