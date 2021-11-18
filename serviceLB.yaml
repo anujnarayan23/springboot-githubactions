@@ -17,7 +17,7 @@ spec:
   spec:
    containers:
    - name: myapp
-     image: anuj23/githubactions:$(IMAGE_TAG)
+     image: anuj23/githubactions:tagversion
      ports:
      - containerPort: 8082
    imagePullSecrets:
