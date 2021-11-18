@@ -4,7 +4,7 @@ on:
   pull_request:
     branches: [ main ]
   push:
-    branches: [ master ]
+    branches: [ main ]
     
 env:
   DATREE_TOKEN: ${{ secrets.DATREE_TOKEN }} 
@@ -71,7 +71,7 @@ jobs:
     - name: Publish to Registry
       uses: elgohr/Publish-Docker-Github-Action@master
       with:
-        name: anuj23/githubactions
+        name: anuj23/githubactions springapp:${{ github.run_number }}
         username: ${{ secrets.DOCKER_USERNAME }}
         password: ${{ secrets.DOCKER_PASSWORD }}
    # - name: Publish docker image
