@@ -65,6 +65,7 @@ jobs:
       with:
         tag_name: springapp:${{ github.run_number }}
         path: downloads
+ #       name: springapp:${{ github.run_number }}
         
 #    - name: Extract release notes
 #      id: extract_release_notes
@@ -75,8 +76,8 @@ jobs:
       env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       with:
-          tag_name: springapp:${{ github.run_number }}
-          release_name: springapp:${{ github.run_number }}
+          tag_name: ${{ github.run_number }}
+          release_name: ${{ github.run_number }}
           draft: false
           prerelease: false
           body: ${{ steps.extract-release-notes.outputs.release_notes }}
