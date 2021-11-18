@@ -1,4 +1,4 @@
-name: Java CI with Maven
+name: Java Application Deployment on GKE using GitHub Acrions
 
 on:
   pull_request:
