@@ -17,7 +17,7 @@ spec:
   spec:
    containers:
    - name: myapp
-     image: devopscicd.jfrog.io/default-docker-local/devops:69
+     image: devopscicd.jfrog.io/default-docker-local/devops:64
      ports:
      - containerPort: 8082
    imagePullSecrets:
