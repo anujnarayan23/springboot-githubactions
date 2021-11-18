@@ -17,7 +17,7 @@ spec:
   spec:
    containers:
    - name: myapp
-     image: anuj23/githubactions:latest
+     image: anuj23/githubactions:$github.run_number
      ports:
      - containerPort: 8082
    imagePullSecrets:
