@@ -66,17 +66,17 @@ jobs:
         name: spring
         path: downloads
         
-#    - name: Extract release notes
-#      uses: ffurrer2/extract-release-notes@v1
- #     with:
- #         release_notes_file: CHANGELOG.md
+    - name: Extract release notes
+      id: extract_release_notes
+      uses: ffurrer2/extract-release-notes@v1
+      
     - name: Create release
       uses: actions/create-release@v1
       env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       with:
-          tag_name: ${{ github.ref }}
-          release_name: ${{ github.ref }}
+          tag_name: springapp:${{ github.run_number }}
+          release_name: springapp:${{ github.run_number }}
           draft: false
           prerelease: false
           body: ${{ steps.extract-release-notes.outputs.release_notes }}
@@ -89,7 +89,7 @@ jobs:
     - name: Publish to Registry
       uses: elgohr/Publish-Docker-Github-Action@master
       with:
-        name: anuj23/githubactions:${{ github.run_number }}
+        name: anuj23/githubactions/springapp:${{ github.run_number }}
         username: ${{ secrets.DOCKER_USERNAME }}
         password: ${{ secrets.DOCKER_PASSWORD }}
         
