@@ -53,7 +53,7 @@ jobs:
     - name: Create a temp directory
       run: mkdir downloads
       
-    - name: Add artifacts to publish to the temp folder
+    - name: Add artifacts to publish to the github
       run: |
          cd downloads
          pwd
@@ -63,8 +63,22 @@ jobs:
     - name: Uplad Github Artifact
       uses: actions/upload-artifact@v2.2.4
       with:
-        name: new-artifact
+        name: spring:${{ github.run_number }}
         path: downloads
+        
+    - name: Extract release notes
+      id: extract-release-notes
+      uses: ffurrer2/extract-release-notes@v1
+    - name: Create release
+      uses: actions/create-release@v1
+      env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      with:
+          tag_name: ${{ github.ref }}
+          release_name: ${{ github.ref }}
+          draft: false
+          prerelease: false
+          body: ${{ steps.extract-release-notes.outputs.release_notes }}
     
     - name: Generate docker image
       uses: actions/checkout@v2
