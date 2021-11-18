@@ -89,7 +89,7 @@ jobs:
     # Deploy sample image to the GKE cluster
     - name: Deploy
       run: |-
-        #sh "sed -i 's/tagversion/${{ github.run_number }}/g' serviceLB.yaml"
+        sed -i 's/tagversion/${env.IMAGE_TAG}/g' serviceLB.yaml
         kubectl apply -f serviceLB.yaml
         kubectl rollout status deployment/$DEPLOYMENT_NAME
         kubectl get services -o wide
