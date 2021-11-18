@@ -63,7 +63,7 @@ jobs:
     - name: Uplad Github Artifact
       uses: actions/upload-artifact@v2.2.4
       with:
-        name: spring:${{ github.run_number }}
+        name: spring
         path: downloads
         
     - name: Extract release notes
