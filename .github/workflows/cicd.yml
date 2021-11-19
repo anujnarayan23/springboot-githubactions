@@ -1,18 +1,11 @@
-name: Java Application Deployment on GKE using GitHub Acrions
+name: Java Application CI
 
 on:
   pull_request:
     branches: [ main ]
-  push:
-    branches: [ main ]
     
 env:
   DATREE_TOKEN: ${{ secrets.DATREE_TOKEN }} 
-  PROJECT_ID: ${{ secrets.GKE_PROJECT }}
-  GKE_CLUSTER: devops    # TODO: update to cluster name
-  GKE_ZONE: us-central1-c	   # TODO: update to cluster zone
-  DEPLOYMENT_NAME: myapp-deployment # TODO: update deployment name if changed in deployment.yaml
-  IMAGE_TAG: ${{ github.run_number }}
 
 jobs:
   build:
@@ -65,11 +58,6 @@ jobs:
       with:
         tag_name: springapp:${{ github.run_number }}
         path: downloads
- #       name: springapp:${{ github.run_number }}
-        
-#    - name: Extract release notes
-#      id: extract_release_notes
-#      uses: ffurrer2/extract-release-notes@v1
       
     - name: Create release
       uses: actions/create-release@v1
@@ -82,31 +70,4 @@ jobs:
           prerelease: false
           body: ${{ steps.extract-release-notes.outputs.release_notes }}
     
-    - name: Generate docker image
-      uses: actions/checkout@v2
-    - name: Build the Docker image
-      run: docker build --file Dockerfile -t springapp:${{ github.run_number }} .
-      
-    - name: Publish to Registry
-      uses: elgohr/Publish-Docker-Github-Action@master
-      with:
-        name: anuj23/githubactions:${{ github.run_number }}
-        username: ${{ secrets.DOCKER_USERNAME }}
-        password: ${{ secrets.DOCKER_PASSWORD }}
-        
-    - uses: google-github-actions/setup-gcloud@master
-      with:
-        service_account_key: ${{ secrets.GKE_SA_KEY }}
-        project_id: ${{ secrets.GKE_PROJECT }}
-
-    # Get the GKE credentials so we can deploy to the cluster
-    - run: |-
-        gcloud container clusters get-credentials "$GKE_CLUSTER" --zone "$GKE_ZONE"
-    # Deploy sample image to the GKE cluster
-    - name: Deploy
-      run: |-
-        sed -i 's/tagversion/${{ github.run_number }}/g' serviceLB.yaml
-        kubectl apply -f serviceLB.yaml
-        kubectl rollout status deployment/$DEPLOYMENT_NAME
-        kubectl get services -o wide
 
