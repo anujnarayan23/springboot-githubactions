@@ -1,13 +1,11 @@
-# simple-java-maven-app
+# springboot-githubactions
 
 This repository is for the
-[Build a Java app with Maven](https://github.com/anujnarayan23/simple-java-maven-app-master)
+[Build a Java app with Maven](https://github.com/anujnarayan23/springboot-githubactions)
 tutorial in the [Jenkins User Documentation](https://jenkins.io/doc/).
 
-The repository contains a simple Java application which outputs the string
-"Hello world!" and is accompanied by a couple of unit tests to check that the
-main application works as expected. The results of these tests are saved to a
-JUnit XML report.
+The repository contains a simple Java application which outputs the string "Hello world!" and is accompanied by a couple of unit tests to check that the
+main application works as expected. The results of these tests are saved to a JUnit XML report.
 
 This repo has Jenkins file which contains multiple stages.
 1. Clone repo
@@ -16,5 +14,5 @@ This repo has Jenkins file which contains multiple stages.
 4. Sonar
 5. Docker build
 6. Docker push - publish the image to artifact
+7. Deploy the project on GKE cluster
 
-Test
